@@ -1,0 +1,10 @@
+{
+  "urls": {
+    "B1": "https://jwc.wust.edu.cn/tzgg.htm",
+    "B2": "https://jwc.wust.edu.cn/jyjxdt.htm"
+  },
+  "listSelector": ".new_list li a",
+  "titleSelector": ".cotit",
+  "timeSelector": ".sjkk",
+  "textSelector": ".v_news_content"
+}

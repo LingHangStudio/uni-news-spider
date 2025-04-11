@@ -1,0 +1,12 @@
+{
+  "urls": {
+    "X_9_1": "https://my.wust.edu.cn/tzgg.htm",
+    "X_9_2": "https://my.wust.edu.cn/xydb.htm",
+    "X_9_3": "https://my.wust.edu.cn/llgj.htm",
+    "X_9_4": "https://my.wust.edu.cn/shjj.htm"
+  },
+  "listSelector": ".col_news_list .news_title a.news_tit",
+  "titleSelector": ".arti_title",
+  "timeSelector": ".arti_metas",
+  "textSelector": ".v_news_content"
+}

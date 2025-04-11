@@ -1,0 +1,10 @@
+{
+  "urls": {
+    "X_10_1": "https://qcyjt.wust.edu.cn/xwtt.htm",
+    "X_10_2": "https://qcyjt.wust.edu.cn/zxgg.htm"
+  },
+  "listSelector": ".col_news_list .news_title a.news_tit",
+  "titleSelector": ".arti_title",
+  "timeSelector": ".arti_metas",
+  "textSelector": ".v_news_content"
+}

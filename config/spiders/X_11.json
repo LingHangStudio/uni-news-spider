@@ -1,0 +1,13 @@
+{
+  "urls": {
+    "X_11_1": "https://smkx.wust.edu.cn/xydt.htm",
+    "X_11_2": "https://smkx.wust.edu.cn/tzgg.htm",
+    "X_11_3": "https://smkx.wust.edu.cn/jxgl.htm",
+    "X_11_4": "https://smkx.wust.edu.cn/dwjlyhz/xsjl.htm",
+    "X_11_5": "https://smkx.wust.edu.cn/kydt.htm"
+  },
+  "listSelector": ".col_news_list .news_title a.news_tit",
+  "titleSelector": ".arti_title",
+  "timeSelector": ".arti_metas",
+  "textSelector": ".v_news_content"
+}

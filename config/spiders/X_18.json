@@ -1,0 +1,12 @@
+{
+  "urls": {
+    "X_18_1": "https://cree.wust.edu.cn/tzgg.htm",
+    "X_18_2": "https://cree.wust.edu.cn/bksjy/jxdt.htm",
+    "X_18_3": "https://cree.wust.edu.cn/xtgz/xtdt.htm",
+    "X_18_4": "https://cree.wust.edu.cn/kxyj.htm"
+  },
+  "listSelector": ".col_news_list .news_title a.news_tit",
+  "titleSelector": ".arti_title",
+  "timeSelector": ".arti_metas",
+  "textSelector": ".v_news_content"
+}

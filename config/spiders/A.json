@@ -1,0 +1,13 @@
+{
+  "urls": {
+    "A1": "https://news.wust.edu.cn/xxyw.htm",
+    "A2": "https://news.wust.edu.cn/mtwkd.htm",
+    "A3": "https://news.wust.edu.cn/xsdt.htm",
+    "A4": "https://news.wust.edu.cn/zhxw.htm",
+    "A5": "https://news.wust.edu.cn/yxxw.htm"
+  },
+  "listSelector": ".col_news_list .news_tit a",
+  "titleSelector": ".arti_title",
+  "timeSelector": ".arti_metas",
+  "textSelector": ".v_news_content"
+}

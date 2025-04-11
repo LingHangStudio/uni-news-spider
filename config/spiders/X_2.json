@@ -1,0 +1,11 @@
+{
+  "urls": {
+    "X_2_1": "https://cjxy.wust.edu.cn/xydt.htm",
+    "X_2_2": "https://cjxy.wust.edu.cn/tzgg.htm",
+    "X_2_3": "https://cjxy.wust.edu.cn/rcpy.htm"
+  },
+  "listSelector": ".col_news_list .news_title a.news_tit",
+  "titleSelector": ".arti_title",
+  "timeSelector": ".arti_metas",
+  "textSelector": ".v_news_content"
+}

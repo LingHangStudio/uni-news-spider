@@ -1,0 +1,11 @@
+{
+  "urls": {
+    "X_14_1": "https://fxyjj.wust.edu.cn/tzgg.htm",
+    "X_14_2": "https://fxyjj.wust.edu.cn/xwdt.htm",
+    "X_14_3": "https://fxyjj.wust.edu.cn/xtgz/xgdt.htm"
+  },
+  "listSelector": ".col_news_list .news_title a.news_tit",
+  "titleSelector": ".arti_title",
+  "timeSelector": ".arti_metas",
+  "textSelector": ".v_news_content"
+}

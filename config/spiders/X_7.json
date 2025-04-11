@@ -1,0 +1,11 @@
+{
+  "urls": {
+    "X_7_1": "https://jsjkx.wust.edu.cn/xyxw.htm",
+    "X_7_2": "https://jsjkx.wust.edu.cn/tzgg.htm",
+    "X_7_3": "https://jsjkx.wust.edu.cn/djgz.htm"
+  },
+  "listSelector": ".col_news_list .news_title a.news_tit",
+  "titleSelector": ".arti_title",
+  "timeSelector": ".arti_metas",
+  "textSelector": ".v_news_content"
+}

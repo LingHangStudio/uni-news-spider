@@ -1,0 +1,14 @@
+{
+  "urls": {
+    "C1": "https://tw.wust.edu.cn/tqkb.htm",
+    "C2": "https://tw.wust.edu.cn/jcxx.htm",
+    "C3": "https://tw.wust.edu.cn/wjzl.htm",
+    "C4": "https://tw.wust.edu.cn/xshd.htm",
+    "C5": "https://tw.wust.edu.cn/rdjj.htm",
+    "C6": "https://tw.wust.edu.cn/tszs.htm"
+  },
+  "listSelector": ".new_list li a",
+  "titleSelector": ".cotit",
+  "timeSelector": ".sjkk",
+  "textSelector": ".v_news_content"
+}

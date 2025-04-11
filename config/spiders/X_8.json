@@ -1,0 +1,12 @@
+{
+  "urls": {
+    "X_8_1": "https://lixueyuan.wust.edu.cn/xydt.htm",
+    "X_8_2": "https://lixueyuan.wust.edu.cn/jxgl1.htm",
+    "X_8_3": "https://lixueyuan.wust.edu.cn/tzgg.htm",
+    "X_8_4": "https://lixueyuan.wust.edu.cn/kxyj/kydt.htm"
+  },
+  "listSelector": ".col_news_list .news_title a.news_tit",
+  "titleSelector": ".arti_title",
+  "timeSelector": ".arti_metas",
+  "textSelector": ".v_news_content"
+}
