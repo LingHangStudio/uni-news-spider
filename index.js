@@ -1,6 +1,5 @@
 const { JSDOM } = require("jsdom");
 const sequelize = require("./sequelize"); // 数据库配置
-const Task = require("./models/Task");
 const fs = require("fs");
 const path = require("path");
 
