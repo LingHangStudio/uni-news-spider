@@ -6,6 +6,6 @@
   },
   "listSelector": ".col_news_list .liebiao a",
   "titleSelector": ".title-center",
-  "timeSelector": ".shawdate",
+  "timeSelector": ".showdate",
   "textSelector": ".v_news_content"
 }
