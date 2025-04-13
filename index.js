@@ -91,17 +91,6 @@ async function spiderRoutine() {
       const element = document.querySelector(config.textSelector);
       const pageContent = element ? element.textContent : "No content found";
 
-      // 存储到数据库
-      try {
-        await Task.create({
-          sub: key,
-          url: target,
-        });
-        console.log(`Task created for ${target}`);
-      } catch (err) {
-        console.error("Database save error:", err);
-      }
-
       // 执行爬虫逻辑
       try {
         await launch(key, target, config); // 调用 launch 函数并传递参数
