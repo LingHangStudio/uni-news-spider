@@ -10,7 +10,7 @@ const NodeUrl = require("node:url");
 const sequelize = require("./sequelize");
 
 // 定义新闻模型
-const News = sequelize.define("News", {
+const News = sequelize.define("news", {
   sub: DataTypes.STRING, // 直接使用合并后的 sub 作为唯一标识
   data: DataTypes.TEXT,
   title: DataTypes.STRING,

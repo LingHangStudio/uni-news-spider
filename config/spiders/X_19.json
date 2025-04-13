@@ -4,8 +4,8 @@
     "X_19_2": "https://xtxy.wust.edu.cn/xwdt.htm",
     "X_19_3": "https://xtxy.wust.edu.cn/fc.htm"
   },
-  "listSelector": ".col_news_list .news_title a.news_tit",
-  "titleSelector": ".arti_title",
-  "timeSelector": ".arti_metas",
+  "listSelector": ".col_news_list .liebiao a",
+  "titleSelector": ".title-center",
+  "timeSelector": ".shawdate",
   "textSelector": ".v_news_content"
 }
