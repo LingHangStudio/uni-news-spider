@@ -92,6 +92,7 @@ async function spiderRoutine() {
 
       // 执行爬虫逻辑
       try {
+        console.log(`Starting spider for ${key} - ${target}`);
         await launch(key, target, config); // 调用 launch 函数并传递参数
       } catch (err) {
         console.error(`Spider execution failed for ${key} - ${target}:`, err);

@@ -149,8 +149,40 @@ async function compareNews(environment) {
   environment.spideNews = environment.allNews.filter(
     (href) => !existingHrefs.includes(href)
   );
+
+  // 提取日期并排序，让较旧的数据优先爬取
+  environment.spideNews.sort((a, b) => {
+    // 尝试从URL中提取日期（假设URL中包含日期信息）
+    const extractDateFromUrl = (url) => {
+      // 尝试匹配多种日期格式
+      const datePatterns = [
+        /(\d{4})(\d{2})(\d{2})/, // 20231001
+        /(\d{4})-(\d{2})-(\d{2})/, // 2023-10-01
+        /(\d{4})\/(\d{2})\/(\d{2})/, // 2023/10/01
+        /(\d{4})_(\d{2})_(\d{2})/, // 2023_10_01
+        /(\d{4})年(\d{2})月(\d{2})日/, // 2023年10月01日
+      ];
+
+      for (const pattern of datePatterns) {
+        const match = url.match(pattern);
+        if (match) {
+          return new Date(`${match[1]}-${match[2]}-${match[3]}`);
+        }
+      }
+
+      // 如果没有找到日期，返回一个很旧的日期（这样会排在最前面）
+      return new Date(1970, 0, 1);
+    };
+
+    const dateA = extractDateFromUrl(a);
+    const dateB = extractDateFromUrl(b);
+
+    // 升序排序（旧日期在前）
+    return dateA - dateB;
+  });
+
   console.log(
-    `${environment.spideNews.length} page(s) will be spide:`,
+    `${environment.spideNews.length} page(s) will be spide in chronological order (oldest first):`,
     environment.spideNews
   );
 }
