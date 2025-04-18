@@ -14,6 +14,10 @@ let latestTimeStamp;
 
 // 定义新闻模型
 const News=sequelize.define('news',{
+  id:{
+    type:DataTypes.INTEGER,
+    primaryKey:true
+  },
   sub: DataTypes.STRING,
   title: DataTypes.STRING,
   time: {
@@ -26,9 +30,13 @@ const News=sequelize.define('news',{
   other: DataTypes.JSON,
 },{
   defaultScope: {
-      order: [['time', 'DESC']],
+    order: [
+      ['time', 'DESC'],
+      ['id','DESC']
+    ]
     }
 })
+
 // 判断路径类型是绝对路径、相对路径还是网络路径
 function pathType(pathString) {
   if (path.isAbsolute(pathString)) {
