@@ -1,7 +1,7 @@
 {
   "urls": {
     "X_12_1": "https://tyxy.wust.edu.cn/xwdt.htm",
-    "X_12_2": "https://tyxy.wust.edu.cn/djgz1.htm",
+    "X_12_2": "https://tyxy.wust.edu.cn/djgz.htm",
     "X_12_3": "https://tyxy.wust.edu.cn/tzgg.htm"
   },
   "listSelector": ".col_news_list .news_title a.news_tit",

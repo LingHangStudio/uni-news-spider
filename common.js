@@ -8,34 +8,16 @@ const NodeUrl = require("node:url");
 
 // 修改为使用 sequelize.js 中的配置
 const sequelize = require("./sequelize");
-
 let latestTimeStamp;
-
-
 // 定义新闻模型
-const News=sequelize.define('news',{
-  id:{
-    type:DataTypes.INTEGER,
-    primaryKey:true
-  },
-  sub: DataTypes.STRING,
+const News = sequelize.define("news", {
+  sub: DataTypes.STRING, // 直接使用合并后的 sub 作为唯一标识
+  data: DataTypes.TEXT,
   title: DataTypes.STRING,
-  time: {
-      type: DataTypes.BIGINT,
-      allowNull: true,
-      comment: '发布时间时间戳（毫秒）',
-    },
-  data:DataTypes.TEXT,
+  time: DataTypes.JSON,
   href: DataTypes.STRING,
   other: DataTypes.JSON,
-},{
-  defaultScope: {
-    order: [
-      ['time', 'DESC'],
-      ['id','DESC']
-    ]
-    }
-})
+});
 
 // 判断路径类型是绝对路径、相对路径还是网络路径
 function pathType(pathString) {
@@ -82,6 +64,13 @@ function findFirstMatchElement(document, selectors) {
   return null;
 }
 
+function convertTimeObjectToDate(time) {
+  if (!time || !time.year || !time.month || !time.day) return latestTimeStamp;
+  const nowTimeStamp = new Date(time.year, time.month - 1, time.day).getTime();
+  if (nowTimeStamp > latestTimeStamp) latestTimeStamp = nowTimeStamp;
+  return nowTimeStamp; // JS中的月份是 0-11
+}
+
 // 修改后的 readHtml 函数
 async function readHtml(environment, href, html) {
   const dom = new JSDOM(html);
@@ -111,13 +100,6 @@ async function readHtml(environment, href, html) {
   const textSelectors = environment.config.textSelector || ".read";
   const textElement = findFirstMatchElement(document, textSelectors);
   const text = textElement?.innerHTML || "";
-  
-  function convertTimeObjectToDate(time) {
-    if (!time || !time.year || !time.month || !time.day) return latestTimeStamp;
-    const nowTimeStamp=new Date(time.year, time.month - 1, time.day).getTime()
-    if(nowTimeStamp>latestTimeStamp)latestTimeStamp=nowTimeStamp;
-    return nowTimeStamp; // JS中的月份是 0-11
-  }
 
   // 存放图片和附件等附加信息
   const other = { picList: [] };
