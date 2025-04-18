@@ -48,14 +48,31 @@ function subAssetUrl(currentUrl, assetUrl) {
   }
 }
 
-// 读取新闻 HTML ，并写入数据库
+// 在 common.js 中添加一个辅助函数来处理多个选择器
+function findFirstMatchElement(document, selectors) {
+  // 如果 selectors 不是数组，转为数组
+  if (!Array.isArray(selectors)) {
+    selectors = [selectors];
+  }
+
+  for (const selector of selectors) {
+    const element = document.querySelector(selector);
+    if (element) {
+      return element;
+    }
+  }
+  return null;
+}
+
+// 修改后的 readHtml 函数
 async function readHtml(environment, href, html) {
   const dom = new JSDOM(html);
   const document = dom.window.document;
 
-  // 新闻时间
-  const timeSelector = environment.config.timeSelector || ".arti_update";
-  const timeText = document.querySelector(timeSelector)?.textContent || "";
+  // 新闻时间 - 支持多个选择器
+  const timeSelectors = environment.config.timeSelector || ".arti_update";
+  const timeElement = findFirstMatchElement(document, timeSelectors);
+  const timeText = timeElement?.textContent || "";
   const targetMatch =
     timeText.match(/[0-9]+-[0-9]+-[0-9]+/) ||
     timeText.match(/[0-9]+年[0-9]+月[0-9]+日/);
@@ -67,16 +84,14 @@ async function readHtml(environment, href, html) {
       }
     : { year: 0, month: 0, day: 0 };
 
-  // 新闻标题
-  const titleSelector = environment.config.titleSelector || ".bt";
-  const title =
-    document
-      .querySelector(titleSelector)
-      ?.textContent?.replace(/[\r\n\s]/g, "") || "";
+  // 新闻标题 - 支持多个选择器
+  const titleSelectors = environment.config.titleSelector || ".bt";
+  const titleElement = findFirstMatchElement(document, titleSelectors);
+  const title = titleElement?.textContent?.replace(/[\r\n\s]/g, "") || "";
 
-  // 新闻正文
-  const textSelector = environment.config.textSelector || ".read";
-  const textElement = document.querySelector(textSelector);
+  // 新闻正文 - 支持多个选择器
+  const textSelectors = environment.config.textSelector || ".read";
+  const textElement = findFirstMatchElement(document, textSelectors);
   const text = textElement?.innerHTML || "";
 
   // 存放图片和附件等附加信息

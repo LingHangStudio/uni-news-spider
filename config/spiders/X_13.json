@@ -6,7 +6,7 @@
     "X_13_4": "https://wgy.wust.edu.cn/xtgz.htm"
   },
   "listSelector": ".col_news_list .news_title a.news_tit",
-  "titleSelector": ".arti_title",
-  "timeSelector": ".arti_metas",
+  "titleSelector": [".arti_title", ".title-center"],
+  "timeSelector": [".arti_metas", ".showdate"],
   "textSelector": ".v_news_content"
 }

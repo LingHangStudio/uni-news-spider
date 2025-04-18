@@ -7,7 +7,7 @@
     "X_1_5": "https://cy.wust.edu.cn/sysaq.htm"
   },
   "listSelector": ".col_news_list .news_title a.news_tit",
-  "titleSelector": ".arti_title",
-  "timeSelector": ".arti_metas",
+  "titleSelector": [".arti_title", ".title-center"],
+  "timeSelector": [".arti_metas", ".showdate"],
   "textSelector": ".v_news_content"
 }
