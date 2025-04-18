@@ -4,7 +4,7 @@
     "B2": "https://jwc.wust.edu.cn/jyjxdt.htm"
   },
   "listSelector": ".new_list li a",
-  "titleSelector": ".cotit",
-  "timeSelector": ".sjkk",
+  "titleSelector": [".cotit", ".title-center"],
+  "timeSelector": [".sjkk", ".showdate"],
   "textSelector": ".v_news_content"
 }

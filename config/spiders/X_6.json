@@ -7,7 +7,7 @@
     "X_6_5": "https://jxzdh.wust.edu.cn/ssdt.htm"
   },
   "listSelector": ".col_news_list .news_title a.news_tit",
-  "titleSelector": ".arti_title",
-  "timeSelector": ".arti_metas",
+  "titleSelector": [".arti_title", ".cotit", ".title-center"],
+  "timeSelector": [".arti_metas", ".sjkk", ".showdate"],
   "textSelector": ".v_news_content"
 }
