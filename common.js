@@ -139,7 +139,6 @@ async function readHtml(environment, href, html) {
 
   // 写入数据库，保存 sub 为唯一键
   await News.create({
-    id: newsId++,
     sub: environment.sub, // 使用合并后的 sub 键
     data: text,
     title,
